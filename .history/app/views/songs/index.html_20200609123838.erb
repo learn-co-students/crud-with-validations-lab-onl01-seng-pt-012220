@@ -1,0 +1,17 @@
+<table>
+    <h1>Songs List</h1>
+    <ul>
+    <% @songs.each do |song| %>
+        <li>
+        <tbody>
+            <div class="song">
+                <tr>
+                    <span><%= link_to song.title, song_path(song) %></span>
+                    <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
+                </tr>
+            </div>
+        </tbody>
+        </li>
+    <% end %>
+    </ul>
+</table>
